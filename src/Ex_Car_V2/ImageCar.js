@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
 export default class ImageCar extends Component {
   render() {
-    let { imgPath } = this.props;
-    return <img src={imgPath} alt="" className="col-4" />;
+    let {imgPath} = this.props;
+    return (<img src={imgPath} alt="img" className="col-4" />);
   }
 }
