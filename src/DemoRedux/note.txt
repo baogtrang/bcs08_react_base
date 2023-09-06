@@ -1,0 +1,5 @@
+redux, react-redux
+redux là tính năng mình cần, còn react-redux là trung giang
+
+reducer: nơi viết logic update data của redux
+mapStateToProps: lấy data từ redux đưa về component dưới dạng props
