@@ -119,4 +119,7 @@ export let shoeArr = [
       "quantity": 445,
       "image": "http://svcy3.myclass.vn/images/nike-air-max-270-react.png"
     } 
-  ]
+  ];
+
+  export const TANG_SO_LUONG = true;
+  export const GIAM_SO_LUONG = false;
