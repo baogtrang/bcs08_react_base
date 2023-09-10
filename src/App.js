@@ -35,10 +35,10 @@ function App() {
       {/* <Ex_Car_V3/> */}
       {/* <Ex_Car_V4/> */}
       {/* --- day 4 --- */}
-      <Ex_Shoe />
+      {/* <Ex_Shoe /> */}
       {/* --- day 5 --- */}
       {/* <DemoRedux /> */}
-      {/* <Ex_Shoe_Redux /> */}
+      <Ex_Shoe_Redux />
       
     </div>
   );
