@@ -1,7 +1,22 @@
-import React, { Component } from "react";
+// rcredux
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-export default class DetailShoe extends Component {
+export class DetailShoe extends Component {
   render() {
-    return <div>DetailShoe</div>;
+    let {image} = this.props.detail;
+    return (
+      <div>
+        <img src={image} alt="shoe" />
+      </div>
+    )
   }
 }
+
+const mapStateToProps = (state) => {
+  return { //object
+    detail: state.shoeReducer.detail,
+  };
+}
+
+export default connect(mapStateToProps)(DetailShoe)

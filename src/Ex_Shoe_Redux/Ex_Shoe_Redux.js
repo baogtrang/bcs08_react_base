@@ -8,8 +8,9 @@ export default class Ex_Shoe_Redux extends Component {
   state = {
     shoeArr: shoeArr,
     cart: [],
-    detail: {},
+    detail: shoeArr[0],
   };
+
   handleAddToCart = (shoe) => {
     let cloneCart = this.state.cart;
     // kiểm tra sp đã có trong giỏ hàng hay chưa
@@ -28,10 +29,10 @@ export default class Ex_Shoe_Redux extends Component {
     this.setState({
       cart: cloneCart,
     });
-
     // th1: sp chưa có trong giỏ hàng=> tạo object mới có thêm key soLuong:1 => push
     // th2: sp đã có trong giỏ hàng=> update key soLuong lên 1 đơn vị
   };
+
   handleRemove = (idShoe) => {
     let cloneCart = this.state.cart;
     let index = cloneCart.indexOf((item) => {
@@ -40,6 +41,7 @@ export default class Ex_Shoe_Redux extends Component {
     cloneCart.splice(index, 1);
     this.setState({ cart: cloneCart });
   };
+
   handleChangeQuantity_v2 = (idShoe, option) => {
     let cloneCart = this.state.cart;
     let index = cloneCart.findIndex((item) => {

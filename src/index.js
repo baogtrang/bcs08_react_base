@@ -10,14 +10,12 @@ import {createStore} from "redux";
 
 // rootReducer là file mình tạo ra, là store tổng của toàn ứng dụng
 import { rootReducer } from './Ex_Shoe_Redux/reducer/rootReducer';
-
-
 import { numberReducer } from './DemoRedux/redux/reducer/numberReducer';
 import { shoeReducer } from './Ex_Shoe_Redux/reducer/shoeReducer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-let store = createStore(numberReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+let store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 root.render(
   // <React.StrictMode>

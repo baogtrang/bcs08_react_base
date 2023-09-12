@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { GIAM_SO_LUONG, TANG_SO_LUONG } from "./data";
+import { connect } from "react-redux";
 
-export default class CartShoe extends Component {
+class CartShoe extends Component {
   renderCart = () => {
     let { cart } = this.props;
 
@@ -65,3 +66,9 @@ export default class CartShoe extends Component {
     );
   }
 }
+
+let mapStateToProps = (state) => {
+  return {cart: state.shoeReducer.cart};
+}
+
+export default connect(mapStateToProps)(CartShoe);
