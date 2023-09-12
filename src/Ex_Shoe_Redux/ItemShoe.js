@@ -12,7 +12,7 @@ class ItemShoe extends Component {
           <small className="">{name}</small>
           <p className="card-text">
             <button
-              onClick={() => {this.props.handleAddToCart(this.props.item);}}
+              onClick={() => {this.props.handleAddShoe(this.props.item);}}
               class="btn btn-primary mr-2">Add</button>
             <button 
               onClick={() => {this.props.handleViewDetail(this.props.item)}} 

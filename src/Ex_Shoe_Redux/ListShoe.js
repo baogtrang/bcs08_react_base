@@ -5,7 +5,7 @@ import { connect } from "react-redux"
 class ListShoe extends Component {
   renderListShoe = () => {
     return this.props.shoeArr.map((item, index) => {
-      return <ItemShoe handleAddToCart={this.props.handleAddToCart} item={item} key={index} />;
+      return <ItemShoe item={item} key={index} />;
     });
   };
   render() {

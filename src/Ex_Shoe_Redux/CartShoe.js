@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { GIAM_SO_LUONG, TANG_SO_LUONG } from "./data";
 import { connect } from "react-redux";
-
+import { UPDATE_QUANTITY } from "./constant/shoeConstant";
 class CartShoe extends Component {
   renderCart = () => {
     let { cart } = this.props;
@@ -18,7 +18,7 @@ class CartShoe extends Component {
           <td>
             <button
               onClick={() => {
-                this.props.handleChangeQuantity(id, GIAM_SO_LUONG);
+                this.props.handleUpdateQuantity(id, GIAM_SO_LUONG);
               }}
               className="btn btn-dark"
             >
@@ -28,7 +28,7 @@ class CartShoe extends Component {
             <strong className="mx-3">{soLuong}</strong>
             <button
               onClick={() => {
-                this.props.handleChangeQuantity(id, TANG_SO_LUONG);
+                this.props.handleUpdateQuantity(id, TANG_SO_LUONG);
               }}
               className="btn btn-success"
             >
@@ -66,9 +66,22 @@ class CartShoe extends Component {
     );
   }
 }
-
 let mapStateToProps = (state) => {
-  return {cart: state.shoeReducer.cart};
-}
+  return { cart: state.shoeReducer.cart };
+};
+let mapDispatchToProps = (dispatch) => {
+  return {
+    handleUpdateQuantity: (id, option) => {
+      let action = {
+        type: UPDATE_QUANTITY,
+        payload: {
+          id,
+          option,
+        },
+      };
+      dispatch(action);
+    },
+  };
+};
 
-export default connect(mapStateToProps)(CartShoe);
+export default connect(mapStateToProps, mapDispatchToProps)(CartShoe);
